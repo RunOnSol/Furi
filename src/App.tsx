@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight,
   Award,
@@ -36,8 +36,11 @@ export default function App() {
       title: "Strategic Communications",
       description:
         "Comprehensive communication strategies that align with your business objectives and resonate with your target audience.",
-      image:
+      images: [
         "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=60",
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=60",
+        "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1400&q=60",
+      ],
       features: [
         "Message Development",
         "Crisis Communication",
@@ -49,8 +52,11 @@ export default function App() {
       title: "Media Relations",
       description:
         "Building strong relationships with media outlets to secure positive coverage and manage your public narrative.",
-      image:
+      images: [
         "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1400&q=60",
+        "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1400&q=60",
+        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1400&q=60",
+      ],
       features: [
         "Press Releases",
         "Media Training",
@@ -65,8 +71,11 @@ export default function App() {
       title: "Brand Management",
       description:
         "Developing and maintaining brand identity, ensuring consistent messaging across all channels and touchpoints.",
-      image:
+      images: [
         "https://furimage.com/images/brand-management.webp",
+        "https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=1400&q=60",
+        "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1400&q=60",
+      ],
       features: ["Brand Strategy", "Visual Identity", "Brand Guidelines"],
     },
     {
@@ -74,8 +83,11 @@ export default function App() {
       title: "Events Management",
       description:
         "Creating memorable experiences through expertly planned corporate events, launches, and stakeholder engagements.",
-      image:
+      images: [
         "https://furimage.com/images/event.webp",
+        "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1400&q=60",
+        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1400&q=60",
+      ],
       features: ["Corporate Events", "Product Launches", "Conferences"],
     },
     {
@@ -83,16 +95,22 @@ export default function App() {
       title: "Content Creation",
       description:
         "Crafting compelling content across multiple platforms to engage audiences and drive meaningful conversations.",
-      image:
+      images: [
         "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1400&q=60",
+        "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&w=1400&q=60",
+        "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1400&q=60",
+      ],
       features: ["Copywriting", "Video Production", "Thought Leadership"],
     },
     {
       icon: Newspaper,
       title: "Publication",
       description: "Managing high quality publication in traditional and modern forms.",
-      image:
+      images: [
         "https://furimage.com/images/pubs-magazines.webp",
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1400&q=60",
+        "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1400&q=60",
+      ],
       features: ["Books", "Magazines", "Pamphlets", "Newsletters"],
     },
     {
@@ -100,8 +118,11 @@ export default function App() {
       title: "Social Media",
       description:
         "Leveraging social platforms to build communities, engage audiences, and amplify your brand message.",
-      image:
+      images: [
         "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1400&q=60",
+        "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1400&q=60",
+        "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=60",
+      ],
       features: ["Social Strategy", "Community Management", "Influencer Relations"],
     },
     {
@@ -109,8 +130,11 @@ export default function App() {
       title: "Stakeholder Engagement",
       description:
         "Facilitating meaningful dialogue between your organization and key stakeholders to build trust and alignment.",
-      image:
+      images: [
         "https://images.unsplash.com/photo-1556761175-129418cb2dfe?auto=format&fit=crop&w=1400&q=60",
+        "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&q=60",
+        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=1400&q=60",
+      ],
       features: ["Investor Relations", "Government Affairs", "Community Outreach"],
     },
     {
@@ -118,8 +142,11 @@ export default function App() {
       title: "Image Consulting",
       description:
         "Personal and corporate image enhancement to ensure authentic, professional, and impactful representation.",
-      image:
+      images: [
         "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1400&q=60",
+        "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60",
+        "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1400&q=60",
+      ],
       features: ["Executive Coaching", "Personal Branding", "Reputation Management"],
     },
   ];
@@ -392,40 +419,9 @@ export default function App() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((s, i) => {
-              const IconComp = s.icon;
-              return (
-                <motion.article key={i} whileHover={{ scale: 1.02 }} whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 8 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.06 }} className="group bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300">
-                  <div className="relative h-40 w-full">
-                    <img src={s.image} alt={s.title} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
-                    <div className="absolute left-4 bottom-4 bg-white/90 rounded-md px-3 py-2 flex items-center gap-3">
-                      <div className="w-10 h-10 bg-blue-900 rounded-md flex items-center justify-center">
-                        <IconComp className="h-5 w-5 text-white" />
-                      </div>
-                      <div className="text-sm font-semibold text-gray-900">{s.title}</div>
-                    </div>
-                  </div>
-
-                  <div className="p-6">
-                    <p className="text-gray-600 mb-4">{s.description}</p>
-                    <ul className="grid grid-cols-1 gap-2 text-sm text-gray-500">
-                      {s.features.slice(0, 3).map((f, idx) => (
-                        <li key={idx} className="flex items-center gap-3">
-                          <span className="w-2 h-2 bg-amber-600 rounded-full inline-block mt-1" />
-                          <span>{f}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    {/* <div className="mt-6 flex items-center justify-between">
-                      <a href="#contact" className="text-amber-600 font-semibold inline-flex items-center gap-2">Learn more <ChevronRight className="h-4 w-4" /></a>
-                      <button className="bg-blue-900 text-white px-4 py-2 rounded-md text-sm shadow">Book</button>
-                    </div> */}
-                  </div>
-                </motion.article>
-              );
-            })}
+            {services.map((s, i) => (
+              <ServiceCard key={i} service={s} index={i} />
+            ))}
           </div>
         </div>
       </section>
@@ -506,6 +502,76 @@ export default function App() {
 }
 
 /* Small helper components below */
+function ServiceCard({ service, index }) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const IconComp = service.icon;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        (prevIndex + 1) % service.images.length
+      );
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [service.images.length]);
+
+  return (
+    <motion.article
+      whileHover={{ scale: 1.02 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 8 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.06 }}
+      className="group bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300"
+    >
+      <div className="relative h-40 w-full overflow-hidden">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={currentImageIndex}
+            src={service.images[currentImageIndex]}
+            alt={`${service.title} ${currentImageIndex + 1}`}
+            className="w-full h-full object-cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          />
+        </AnimatePresence>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
+        <div className="absolute left-4 bottom-4 bg-white/90 rounded-md px-3 py-2 flex items-center gap-3">
+          <div className="w-10 h-10 bg-blue-900 rounded-md flex items-center justify-center">
+            <IconComp className="h-5 w-5 text-white" />
+          </div>
+          <div className="text-sm font-semibold text-gray-900">{service.title}</div>
+        </div>
+        <div className="absolute top-4 right-4 flex gap-1">
+          {service.images.map((_, idx) => (
+            <div
+              key={idx}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                idx === currentImageIndex ? 'bg-white w-6' : 'bg-white/50'
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className="p-6">
+        <p className="text-gray-600 mb-4">{service.description}</p>
+        <ul className="grid grid-cols-1 gap-2 text-sm text-gray-500">
+          {service.features.slice(0, 3).map((f, idx) => (
+            <li key={idx} className="flex items-center gap-3">
+              <span className="w-2 h-2 bg-amber-600 rounded-full inline-block mt-1" />
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </motion.article>
+  );
+}
+
 function ContactCard({ icon, title, subtitle, note }) {
   return (
     <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.3 }} className="text-center group">
