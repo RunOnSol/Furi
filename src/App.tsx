@@ -21,7 +21,10 @@ import {
   TrendingUp,
   UserCheck,
   Users,
-  X,
+  X, Facebook,
+  Linkedin,
+  Twitter,
+  Instagram
 } from "lucide-react";
 
 // NOTE: This single-file React component uses Tailwind CSS + Framer Motion.
@@ -108,8 +111,8 @@ export default function App() {
       description: "Managing high quality publication in traditional and modern forms.",
       images: [
         "https://furimage.com/images/pubs-magazines.webp",
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1400&q=60",
-        "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1400&q=60",
+        "https://furimage.com/images/journal.webp",
+        "https://furimage.com/images/books.jpg",
       ],
       features: ["Books", "Magazines", "Pamphlets", "Newsletters"],
     },
@@ -120,7 +123,7 @@ export default function App() {
         "Leveraging social platforms to build communities, engage audiences, and amplify your brand message.",
       images: [
         "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1400&q=60",
-        "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1400&q=60",
+        "https://furimage.com/images/social.jpg",
         "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=60",
       ],
       features: ["Social Strategy", "Community Management", "Influencer Relations"],
@@ -179,10 +182,11 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
-              <div className="text-2xl font-bold select-none">
+              {/* <div className="text-2xl font-bold select-none">
                 <span className="text-blue-900">Furimage</span>
                 <span className="text-amber-600"> Consult</span>
-              </div>
+              </div> */}
+              <img src="https://furimage.com/images/FUR-IMAGE.png" alt="Furimage Consult Logo" className="h-10 w-auto" />
             </div>
 
             <div className="hidden lg:flex items-center space-x-8">
@@ -465,10 +469,10 @@ export default function App() {
               </div>
 
               <div className="flex space-x-4">
-                <SocialBadge>f</SocialBadge>
-                <SocialBadge>in</SocialBadge>
-                <SocialBadge>tw</SocialBadge>
-                <SocialBadge>Insta</SocialBadge>
+                <Facebook className="h-6 w-6 hover:text-amber-400 transition-colors" />
+                <Linkedin className="h-6 w-6 hover:text-amber-400 transition-colors" />
+                <Twitter className="h-6 w-6 hover:text-amber-400 transition-colors" />
+                <Instagram className="h-6 w-6 hover:text-amber-400 transition-colors" />
               </div>
             </div>
 
