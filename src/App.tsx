@@ -41,8 +41,9 @@ export default function App() {
         "Comprehensive communication strategies that align with your business objectives and resonate with your target audience.",
       images: [
         "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=60",
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=60",
-        "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1400&q=60",
+       "https://furimage.com/images/stra.png",
+       "https://furimage.com/images/sta2.png",
+
       ],
       features: [
         "Message Development",
@@ -56,7 +57,7 @@ export default function App() {
       description:
         "Building strong relationships with media outlets to secure positive coverage and manage your public narrative.",
       images: [
-        "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1400&q=60",
+        "https://furimage.com/images/med.png",
         "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1400&q=60",
         "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1400&q=60",
       ],
@@ -148,7 +149,7 @@ export default function App() {
       images: [
         "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1400&q=60",
         "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60",
-        "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1400&q=60",
+       "https://furimage.com/images/Usman.jpg",
       ],
       features: ["Executive Coaching", "Personal Branding", "Reputation Management"],
     },
@@ -182,11 +183,14 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
-              {/* <div className="text-2xl font-bold select-none">
+              <div>
+                <div className="text-2xl font-bold select-none">
                 <span className="text-blue-900">Furimage</span>
                 <span className="text-amber-600"> Consult</span>
-              </div> */}
-              <img src="https://furimage.com/images/FUR-IMAGE.png" alt="Furimage Consult Logo" className="h-10 w-auto" />
+              </div>
+              <small className="text-sm ml-2 text-gray-500">Image, Identity, and Influence</small>
+              </div>
+              {/* <img src="https://furimage.com/images/FUR-IMAGE.png" alt="Furimage Consult Logo" className="h-10 w-auto" /> */}
             </div>
 
             <div className="hidden lg:flex items-center space-x-8">
@@ -234,7 +238,8 @@ export default function App() {
           </motion.div>
         </div>
       </motion.nav>
-
+<br />
+<br />
       {/* HERO */}
       <section id="home" className="pt-20 pb-24 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 relative overflow-hidden">
         {/* decorative shapes */}
@@ -257,15 +262,15 @@ export default function App() {
               className="space-y-8 text-center lg:text-left"
             >
               <div>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
+                {/* <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
                   Image,
                   <br /> <span className="text-amber-400">Identity</span>,
-                  <br /> And <span className="text-amber-400">Influence</span>
-                </h1>
+                  <br /> and <span className="text-amber-400">Influence</span>
+                </h1> */}
                 <p className="mt-6 text-lg text-blue-100 max-w-2xl">
-                Furimage Consult is strategic partner in public
+                Furimage Consult is a strategic partner in public
                   relations and communications, crafting narratives that
-                  inspire, engage, and drive meaningful connections with
+                  inspire, engage, and drive meaningful connections with different
                   audience. </p>
               </div>
 
@@ -275,9 +280,9 @@ export default function App() {
                   Get Started Today
                   <ArrowRight className="ml-3 h-5 w-5" />
                 </a>
-                <a href="#about" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition-all duration-300 flex items-center justify-center">
+                {/* <a href="#about" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition-all duration-300 flex items-center justify-center">
                   View Our Work
-                </a>
+                </a> */}
               </div>
             </motion.div>
 
@@ -288,7 +293,7 @@ export default function App() {
               className="relative"
             >
               <div className="rounded-3xl overflow-hidden shadow-2xl border border-white/10">
-                <img src="https://furimage.com/images/Usman.jpg" alt="hero" className="w-full h-96 object-cover" />
+                <img src="https://furimage.com/images/conf.png" alt="hero" className="w-full h-96 object-cover" />
                 <div className="p-8 bg-white">
                   <div className="flex items-center gap-4">
                     <div className="w-16 h-16 bg-amber-400 rounded-full flex items-center justify-center shadow">
@@ -310,25 +315,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* STATS */}
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, i) => {
-              const Icon = stat.icon;
-              return (
-                <motion.div key={i} initial={{ y: 8, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.12 }} className="text-center">
-                  <div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4 shadow">
-                    <Icon className="h-8 w-8 text-white" />
-                  </div>
-                  <div className="text-3xl font-extrabold text-blue-900 mb-2">{stat.number}</div>
-                  <div className="text-gray-600 font-medium">{stat.label}</div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+     
 
       {/* ABOUT */}
       <section id="about" className="py-20 bg-gray-50">
@@ -338,12 +325,12 @@ export default function App() {
               <div className="inline-flex items-center bg-amber-100 text-amber-800 px-4 py-2 rounded-full text-sm font-medium">
                 About Furimage Consult
               </div>
-              <h2 className="text-4xl font-bold text-gray-900 leading-tight">
+              {/* <h2 className="text-4xl font-bold text-gray-900 leading-tight">
                 Crafting Excellence in <span className="text-amber-600">Communication</span>
-              </h2>
+              </h2> */}
               <p className="text-lg text-gray-600 leading-relaxed">
-                At Furimage Consult, we understand that your reputation is your most valuable asset. We specialize in strategic public relations and communications that not only protect but enhance your brand's image, identity, and influence.
-              </p>
+             At Furimage Consult, we believe reputation is not just an asset, it is capital. At a time where perception defines influence, we partner with individuals, institutions, and brands to shape narratives, protect credibility, and build enduring public trust. As a strategic public relations and communications firm, we go beyond visibility to strengthen brand image and identity through insight-driven strategy, compelling storytelling, and disciplined media engagement. We don’t merely manage perception, we help our clients lead it, positioning them for relevance, authority, and lasting impact.
+ </p>
 
               <div className="space-y-4">
                 <div className="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
@@ -429,7 +416,25 @@ export default function App() {
           </div>
         </div>
       </section>
-
+ {/* STATS */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat, i) => {
+              const Icon = stat.icon;
+              return (
+                <motion.div key={i} initial={{ y: 8, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.12 }} className="text-center">
+                  <div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4 shadow">
+                    <Icon className="h-8 w-8 text-white" />
+                  </div>
+                  <div className="text-3xl font-extrabold text-blue-900 mb-2">{stat.number}</div>
+                  <div className="text-gray-600 font-medium">{stat.label}</div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
       {/* CONTACT CTA */}
       <section id="contact" className="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 pointer-events-none">
@@ -446,7 +451,7 @@ export default function App() {
             <ContactCard icon={<Phone className="h-6 w-6 text-white" />} title="Call Us" subtitle={<a href="tel:+2348162056196">+234 (0) 81 6205 6196</a>} note="Available 24/7 for urgent matters" />
             <ContactCard icon={<Mail className="h-6 w-6 text-white" />} title="Email Us" subtitle={<a href="mailto:furimageconsult@gmail.com">furimageconsult@gmail.com</a>} note="We respond within 2 hours" />
             <ContactCard icon={<MapPin className="h-6 w-6 text-white" />} title="Visit Us" subtitle={<span>Mamman Vatsa Writer's Village, Mpape, Abuja.</span>} note="Schedule a consultation" />
-            <ContactCard icon={<MonitorDot className="h-6 w-6 text-white" />} title="Virtual Meeting" subtitle={<span>Zoom, Google Meet</span>} note="Schedule a Virtual Meeting" />
+            <ContactCard icon={<MonitorDot className="h-6 w-6 text-white" />} title="Virtual Meeting" subtitle={<span>Zoom, Google Meet</span>} note="Schedule a Virtual Meeting" onClick={() => alert("Virtual meeting coming soon!")} />
           </div>
 
           <div className="text-center">
@@ -498,7 +503,7 @@ export default function App() {
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">&copy; {new Date().getFullYear()} Furimage Consult. All rights reserved. | Created By <a href="http://wa.me/+2349033572505" className="text-amber-400">Lazerwebs</a></div>
+          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">&copy;2024 {/**  - {new Date().getFullYear()}*/} Furimage Consult. All rights reserved. | Created By <a href="http://wa.me/+2349033572505" className="text-amber-400">Lazerwebs</a></div>
         </div>
       </footer>
     </div>
@@ -576,9 +581,14 @@ function ServiceCard({ service, index }) {
   );
 }
 
-function ContactCard({ icon, title, subtitle, note }) {
+function ContactCard({ icon, title, subtitle, note, onClick }: { icon: React.ReactNode; title: React.ReactNode; subtitle: React.ReactNode; note?: React.ReactNode; onClick?: () => void }) {
   return (
-    <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.3 }} className="text-center group">
+    <motion.div
+      whileHover={{ y: -6 }}
+      transition={{ duration: 0.3 }}
+      className={`text-center group ${onClick ? "cursor-pointer" : ""}`}
+      onClick={onClick}
+    >
       <div className="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
         {icon}
       </div>
@@ -589,8 +599,8 @@ function ContactCard({ icon, title, subtitle, note }) {
   );
 }
 
-function SocialBadge({ children }) {
-  return (
-    <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-amber-600 transition-colors cursor-pointer text-sm font-bold">{children}</div>
-  );
-}
+// function SocialBadge({ children }) {
+//   return (
+//     <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-amber-600 transition-colors cursor-pointer text-sm font-bold">{children}</div>
+//   );
+// }
