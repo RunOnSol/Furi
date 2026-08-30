@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useEffect, useState } from "react";
+
+import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowRight,
   Award,
   Calendar,
-  Camera,
-  ChevronRight,
+  Facebook,
   FileText,
   HandHeart,
+  Instagram,
+  Linkedin,
   Mail,
   MapPin,
   Megaphone,
@@ -19,12 +21,10 @@ import {
   Shield,
   Target,
   TrendingUp,
+  Twitter,
   UserCheck,
   Users,
-  X, Facebook,
-  Linkedin,
-  Twitter,
-  Instagram
+  X,
 } from "lucide-react";
 
 // NOTE: This single-file React component uses Tailwind CSS + Framer Motion.
@@ -41,9 +41,8 @@ export default function App() {
         "Comprehensive communication strategies that align with your business objectives and resonate with your target audience.",
       images: [
         "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=60",
-       "https://furimage.com/images/stra.png",
-       "https://furimage.com/images/sta2.png",
-
+        "https://furimage.com/images/stra.png",
+        "https://furimage.com/images/sta2.png",
       ],
       features: [
         "Message Development",
@@ -109,7 +108,8 @@ export default function App() {
     {
       icon: Newspaper,
       title: "Publication",
-      description: "Managing high quality publication in traditional and modern forms.",
+      description:
+        "Managing high quality publication in traditional and modern forms.",
       images: [
         "https://furimage.com/images/pubs-magazines.webp",
         "https://furimage.com/images/journal.webp",
@@ -127,7 +127,11 @@ export default function App() {
         "https://furimage.com/images/social.jpg",
         "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=60",
       ],
-      features: ["Social Strategy", "Community Management", "Influencer Relations"],
+      features: [
+        "Social Strategy",
+        "Community Management",
+        "Influencer Relations",
+      ],
     },
     {
       icon: HandHeart,
@@ -139,7 +143,11 @@ export default function App() {
         "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&q=60",
         "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=1400&q=60",
       ],
-      features: ["Investor Relations", "Government Affairs", "Community Outreach"],
+      features: [
+        "Investor Relations",
+        "Government Affairs",
+        "Community Outreach",
+      ],
     },
     {
       icon: UserCheck,
@@ -149,9 +157,13 @@ export default function App() {
       images: [
         "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1400&q=60",
         "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60",
-       "https://furimage.com/images/Usman.jpg",
+        "https://furimage.com/images/Usman.jpg",
       ],
-      features: ["Executive Coaching", "Personal Branding", "Reputation Management"],
+      features: [
+        "Executive Coaching",
+        "Personal Branding",
+        "Reputation Management",
+      ],
     },
   ];
 
@@ -185,63 +197,106 @@ export default function App() {
             <div className="flex items-center">
               <div>
                 <div className="text-2xl font-bold select-none">
-                <span className="text-blue-900">Furimage</span>
-                <span className="text-amber-600"> Consult</span>
-              </div>
-              <small className="text-sm ml-2 text-gray-500">Image, Identity, and Influence</small>
+                  <span className="text-blue-900">Furimage</span>
+                  <span className="text-amber-600"> Consult</span>
+                </div>
+                <small className="text-sm ml-2 text-gray-500">
+                  Image, Identity, and Influence
+                </small>
               </div>
               {/* <img src="https://furimage.com/images/FUR-IMAGE.png" alt="Furimage Consult Logo" className="h-10 w-auto" /> */}
             </div>
 
             <div className="hidden lg:flex items-center space-x-8">
-              <a href="#home" className="text-gray-700 hover:text-blue-900 transition-colors font-medium py-2">
+              <a
+                href="#home"
+                className="text-gray-700 hover:text-blue-900 transition-colors font-medium py-2"
+              >
                 Home
               </a>
-              <a href="#about" className="text-gray-700 hover:text-blue-900 transition-colors font-medium py-2">
+              <a
+                href="#about"
+                className="text-gray-700 hover:text-blue-900 transition-colors font-medium py-2"
+              >
                 About
               </a>
-              <a href="#services" className="text-gray-700 hover:text-blue-900 transition-colors font-medium py-2">
+              <a
+                href="#services"
+                className="text-gray-700 hover:text-blue-900 transition-colors font-medium py-2"
+              >
                 Services
               </a>
-              <a href="#contact" className="bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition-all duration-300 font-medium shadow-lg hover:shadow-xl">
+              <a
+                href="#contact"
+                className="bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition-all duration-300 font-medium shadow-lg hover:shadow-xl"
+              >
                 Contact Us
               </a>
             </div>
 
             <div className="lg:hidden">
-              <button onClick={() => setIsMenuOpen((s) => !s)} className="text-gray-700 p-2">
-                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              <button
+                onClick={() => setIsMenuOpen((s) => !s)}
+                className="text-gray-700 p-2"
+              >
+                {isMenuOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
               </button>
             </div>
           </div>
 
           {/* mobile menu */}
           <motion.div
-            animate={{ height: isMenuOpen ? "auto" : 0, opacity: isMenuOpen ? 1 : 0 }}
+            animate={{
+              height: isMenuOpen ? "auto" : 0,
+              opacity: isMenuOpen ? 1 : 0,
+            }}
             transition={{ duration: 0.35 }}
             className={`lg:hidden overflow-hidden`}
           >
             <div className="py-4 space-y-2 border-t border-gray-100">
-              <a href="#home" onClick={() => setIsMenuOpen(false)} className="block px-4 py-3 text-gray-700 hover:text-blue-900 hover:bg-gray-50 transition-colors font-medium rounded-lg">
+              <a
+                href="#home"
+                onClick={() => setIsMenuOpen(false)}
+                className="block px-4 py-3 text-gray-700 hover:text-blue-900 hover:bg-gray-50 transition-colors font-medium rounded-lg"
+              >
                 Home
               </a>
-              <a href="#about" onClick={() => setIsMenuOpen(false)} className="block px-4 py-3 text-gray-700 hover:text-blue-900 hover:bg-gray-50 transition-colors font-medium rounded-lg">
+              <a
+                href="#about"
+                onClick={() => setIsMenuOpen(false)}
+                className="block px-4 py-3 text-gray-700 hover:text-blue-900 hover:bg-gray-50 transition-colors font-medium rounded-lg"
+              >
                 About
               </a>
-              <a href="#services" onClick={() => setIsMenuOpen(false)} className="block px-4 py-3 text-gray-700 hover:text-blue-900 hover:bg-gray-50 transition-colors font-medium rounded-lg">
+              <a
+                href="#services"
+                onClick={() => setIsMenuOpen(false)}
+                className="block px-4 py-3 text-gray-700 hover:text-blue-900 hover:bg-gray-50 transition-colors font-medium rounded-lg"
+              >
                 Services
               </a>
-              <a href="#contact" onClick={() => setIsMenuOpen(false)} className="block mx-4 mt-2 bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition-colors font-medium text-center">
+              <a
+                href="#contact"
+                onClick={() => setIsMenuOpen(false)}
+                className="block mx-4 mt-2 bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition-colors font-medium text-center"
+              >
                 Contact Us
               </a>
             </div>
           </motion.div>
         </div>
       </motion.nav>
-<br />
-<br />
+      <br />
+      <br />
       {/* HERO */}
-      <section id="home" className="pt-20 pb-24 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 relative overflow-hidden">
+      <section
+        id="home"
+        className="pt-20 pb-24 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 relative overflow-hidden"
+      >
         {/* decorative shapes */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -250,7 +305,11 @@ export default function App() {
         />
 
         <div className="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=60" alt="team" className="w-full h-full object-cover opacity-20" />
+          <img
+            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=60"
+            alt="team"
+            className="w-full h-full object-cover opacity-20"
+          />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -262,21 +321,25 @@ export default function App() {
               className="space-y-8 text-center lg:text-left"
             >
               <div>
-                {/* <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
                   Image,
                   <br /> <span className="text-amber-400">Identity</span>,
                   <br /> and <span className="text-amber-400">Influence</span>
-                </h1> */}
+                </h1>
                 <p className="mt-6 text-lg text-blue-100 max-w-2xl">
-                Furimage Consult is a strategic partner in public
-                  relations and communications, crafting narratives that
-                  inspire, engage, and drive meaningful connections with different
-                  audience. </p>
+                  Welcome to Furimage Consult, where we help individuals,
+                  organizations, and brands build credibility, communicate
+                  effectively, shape narratives, and create meaningful
+                  connections that strengthen their image, enhance visibility,
+                  and drive lasting impact.
+                </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <a href="#services" className="bg-amber-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-amber-500 transition-all duration-300 flex items-center justify-center group shadow-xl hover:shadow-2xl">
-                  
+                <a
+                  href="#services"
+                  className="bg-amber-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-amber-500 transition-all duration-300 flex items-center justify-center group shadow-xl hover:shadow-2xl"
+                >
                   Get Started Today
                   <ArrowRight className="ml-3 h-5 w-5" />
                 </a>
@@ -293,35 +356,55 @@ export default function App() {
               className="relative"
             >
               <div className="rounded-3xl overflow-hidden shadow-2xl border border-white/10">
-                <img src="https://furimage.com/images/conf.png" alt="hero" className="w-full h-96 object-cover" />
+                <img
+                  src="https://furimage.com/images/conf.png"
+                  alt="hero"
+                  className="w-full h-96 object-cover"
+                />
                 <div className="p-8 bg-white">
                   <div className="flex items-center gap-4">
                     <div className="w-16 h-16 bg-amber-400 rounded-full flex items-center justify-center shadow">
                       <Megaphone className="h-8 w-8 text-blue-900" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold">Strategic Excellence</h3>
-                      <p className="text-gray-600">Delivering results that matter</p>
+                      <h3 className="text-xl font-bold">
+                        Strategic Excellence
+                      </h3>
+                      <p className="text-gray-600">
+                        Delivering results that matter
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* floating badges */}
-              <motion.div animate={{ y: [0, -8, 0] }} transition={{ duration: 3, repeat: Infinity }} className="absolute -top-6 -right-6 w-28 h-28 bg-amber-400/20 rounded-full blur-xl" />
-              <motion.div animate={{ x: [0, 8, 0] }} transition={{ duration: 4, repeat: Infinity }} className="absolute -bottom-6 -left-6 w-20 h-20 bg-blue-400/20 rounded-full blur-xl" />
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="absolute -top-6 -right-6 w-28 h-28 bg-amber-400/20 rounded-full blur-xl"
+              />
+              <motion.div
+                animate={{ x: [0, 8, 0] }}
+                transition={{ duration: 4, repeat: Infinity }}
+                className="absolute -bottom-6 -left-6 w-20 h-20 bg-blue-400/20 rounded-full blur-xl"
+              />
             </motion.div>
           </div>
         </div>
       </section>
 
-     
-
       {/* ABOUT */}
       <section id="about" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div initial={{ x: -20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="space-y-8">
+            <motion.div
+              initial={{ x: -20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-8"
+            >
               <div className="inline-flex items-center bg-amber-100 text-amber-800 px-4 py-2 rounded-full text-sm font-medium">
                 About Furimage Consult
               </div>
@@ -329,8 +412,15 @@ export default function App() {
                 Crafting Excellence in <span className="text-amber-600">Communication</span>
               </h2> */}
               <p className="text-lg text-gray-600 leading-relaxed">
-             At Furimage Consult, we believe reputation is not just an asset, it is capital. At a time where perception defines influence, we partner with individuals, institutions, and brands to shape narratives, protect credibility, and build enduring public trust. As a strategic public relations and communications firm, we go beyond visibility to strengthen brand image and identity through insight-driven strategy, compelling storytelling, and disciplined media engagement. We don’t merely manage perception, we help our clients lead it, positioning them for relevance, authority, and lasting impact.
- </p>
+                Furimage Consult is a Nigerian public relations, communications,
+                and image consulting firm focused on helping individuals,
+                organizations, and brands build strong reputations, communicate
+                effectively, and influence how they are perceived. The basic
+                philosophy of Furimage Consult is that reputation is like
+                capital. Hence, the firm combines communications, story-telling,
+                media management, branding, and stakeholder relations to ensure
+                credibility and visibility of its clients.
+              </p>
 
               <div className="space-y-4">
                 <div className="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
@@ -338,8 +428,13 @@ export default function App() {
                     <Target className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2 text-lg">Strategic Approach</h3>
-                    <p className="text-gray-600">Every campaign is tailored to your unique objectives and market position with data-driven insights.</p>
+                    <h3 className="font-semibold text-gray-900 mb-2 text-lg">
+                      Strategic Approach
+                    </h3>
+                    <p className="text-gray-600">
+                      Every campaign is tailored to your unique objectives and
+                      market position with data-driven insights.
+                    </p>
                   </div>
                 </div>
 
@@ -348,8 +443,13 @@ export default function App() {
                     <Users className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2 text-lg">Expert Team</h3>
-                    <p className="text-gray-600">Seasoned professionals with deep industry knowledge and proven track records across diverse sectors.</p>
+                    <h3 className="font-semibold text-gray-900 mb-2 text-lg">
+                      Expert Team
+                    </h3>
+                    <p className="text-gray-600">
+                      Seasoned professionals with deep industry knowledge and
+                      proven track records across diverse sectors.
+                    </p>
                   </div>
                 </div>
 
@@ -358,38 +458,66 @@ export default function App() {
                     <TrendingUp className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2 text-lg">Measurable Results</h3>
-                    <p className="text-gray-600">Data-driven campaigns that deliver tangible outcomes, ROI, and long-term brand value.</p>
+                    <h3 className="font-semibold text-gray-900 mb-2 text-lg">
+                      Measurable Results
+                    </h3>
+                    <p className="text-gray-600">
+                      Data-driven campaigns that deliver tangible outcomes, ROI,
+                      and long-term brand value.
+                    </p>
                   </div>
                 </div>
               </div>
             </motion.div>
 
-            <motion.div initial={{ x: 20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="relative">
+            <motion.div
+              initial={{ x: 20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative"
+            >
               <div className="bg-white rounded-2xl p-8 shadow-2xl border border-gray-100">
                 <div className="space-y-8">
                   <div className="text-center">
                     <div className="w-20 h-20 bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                       <HandHeart className="h-10 w-10 text-amber-400" />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
-                    <p className="text-gray-600 leading-relaxed">To equip organizations and individuals to tell their stories authentically, build lasting relationships, and achieve their communication goals through innovative strategies.</p>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                      Our Mission
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      To equip organizations and individuals to tell their
+                      stories authentically, build lasting relationships, and
+                      achieve their communication goals through innovative
+                      strategies.
+                    </p>
                   </div>
                   <hr className="border-gray-200" />
                   <div className="space-y-4">
-                    <h4 className="font-semibold text-gray-900 text-center">Core Values</h4>
+                    <h4 className="font-semibold text-gray-900 text-center">
+                      Core Values
+                    </h4>
                     <div className="grid grid-cols-2 gap-4 text-center">
                       <div className="p-3 bg-blue-50 rounded-lg">
-                        <div className="text-sm font-medium text-blue-900">Integrity</div>
+                        <div className="text-sm font-medium text-blue-900">
+                          Integrity
+                        </div>
                       </div>
                       <div className="p-3 bg-amber-50 rounded-lg">
-                        <div className="text-sm font-medium text-amber-800">Excellence</div>
+                        <div className="text-sm font-medium text-amber-800">
+                          Excellence
+                        </div>
                       </div>
                       <div className="p-3 bg-blue-50 rounded-lg">
-                        <div className="text-sm font-medium text-blue-900">Innovation</div>
+                        <div className="text-sm font-medium text-blue-900">
+                          Innovation
+                        </div>
                       </div>
                       <div className="p-3 bg-amber-50 rounded-lg">
-                        <div className="text-sm font-medium text-amber-800">Results</div>
+                        <div className="text-sm font-medium text-amber-800">
+                          Results
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -404,9 +532,17 @@ export default function App() {
       <section id="services" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-4">Our Services</div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Comprehensive <span className="text-amber-600">PR Solutions</span></h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">From strategic communications to image consulting, our full-service approach ensures your brand's message resonates across every channel and touchpoint with maximum impact.</p>
+            <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-4">
+              Our Services
+            </div>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Comprehensive <span className="text-amber-600">PR Solutions</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              From strategic communications to image consulting, our
+              full-service approach ensures your brand's message resonates
+              across every channel and touchpoint with maximum impact.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -416,18 +552,27 @@ export default function App() {
           </div>
         </div>
       </section>
- {/* STATS */}
+      {/* STATS */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, i) => {
               const Icon = stat.icon;
               return (
-                <motion.div key={i} initial={{ y: 8, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.12 }} className="text-center">
+                <motion.div
+                  key={i}
+                  initial={{ y: 8, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.12 }}
+                  className="text-center"
+                >
                   <div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4 shadow">
                     <Icon className="h-8 w-8 text-white" />
                   </div>
-                  <div className="text-3xl font-extrabold text-blue-900 mb-2">{stat.number}</div>
+                  <div className="text-3xl font-extrabold text-blue-900 mb-2">
+                    {stat.number}
+                  </div>
                   <div className="text-gray-600 font-medium">{stat.label}</div>
                 </motion.div>
               );
@@ -436,26 +581,85 @@ export default function App() {
         </div>
       </section>
       {/* CONTACT CTA */}
-      <section id="contact" className="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white relative overflow-hidden">
+      <section
+        id="contact"
+        className="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white relative overflow-hidden"
+      >
         <div className="absolute inset-0 opacity-20 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=60" alt="background" className="w-full h-full object-cover" />
+          <img
+            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=60"
+            alt="background"
+            className="w-full h-full object-cover"
+          />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-12">
-            <motion.h2 initial={{ y: 10, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-4xl font-bold mb-6">Ready to Transform Your <span className="text-amber-400">Brand Story</span>?</motion.h2>
-            <motion.p initial={{ y: 10, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.08 }} className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">Let's discuss how our strategic approach to public relations and communications can elevate your brand and drive meaningful results for your business.</motion.p>
+            <motion.h2
+              initial={{ y: 10, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-4xl font-bold mb-6"
+            >
+              Ready to Transform Your{" "}
+              <span className="text-amber-400">Brand Story</span>?
+            </motion.h2>
+            <motion.p
+              initial={{ y: 10, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.08 }}
+              className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed"
+            >
+              Let's discuss how our strategic approach to public relations and
+              communications can elevate your brand and drive meaningful results
+              for your business.
+            </motion.p>
           </div>
 
           <div className="grid lg:grid-cols-4 gap-8 mb-12">
-            <ContactCard icon={<Phone className="h-6 w-6 text-white" />} title="Call Us" subtitle={<a href="tel:+2348162056196">+234 (0) 81 6205 6196</a>} note="Available 24/7 for urgent matters" />
-            <ContactCard icon={<Mail className="h-6 w-6 text-white" />} title="Email Us" subtitle={<a href="mailto:furimageconsult@gmail.com">furimageconsult@gmail.com</a>} note="We respond within 2 hours" />
-            <ContactCard icon={<MapPin className="h-6 w-6 text-white" />} title="Visit Us" subtitle={<span>Mamman Vatsa Writer's Village, Mpape, Abuja.</span>} note="Schedule a consultation" />
-            <ContactCard icon={<MonitorDot className="h-6 w-6 text-white" />} title="Virtual Meeting" subtitle={<span>Zoom, Google Meet</span>} note="Schedule a Virtual Meeting" onClick={() => alert("Virtual meeting coming soon!")} />
+            <ContactCard
+              icon={<Phone className="h-6 w-6 text-white" />}
+              title="Call Us"
+              subtitle={<a href="tel:+2348162056196">+234 (0) 81 6205 6196</a>}
+              note="Available 24/7 for urgent matters"
+            />
+            <ContactCard
+              icon={<Mail className="h-6 w-6 text-white" />}
+              title="Email Us"
+              subtitle={
+                <a href="mailto:furimageconsult@gmail.com">
+                  furimageconsult@gmail.com
+                </a>
+              }
+              note="We respond within 2 hours"
+            />
+            <ContactCard
+              icon={<MapPin className="h-6 w-6 text-white" />}
+              title="Visit Us"
+              subtitle={
+                <span>
+                  Off Ibrahim Aliyu Street, Phase II, Brick City Estate, Kubwa
+                  Expressway, Abuja.
+                </span>
+              }
+              note="Schedule a consultation"
+            />
+            <ContactCard
+              icon={<MonitorDot className="h-6 w-6 text-white" />}
+              title="Virtual Meeting"
+              subtitle={<span>Zoom, Google Meet</span>}
+              note="Schedule a Virtual Meeting"
+              onClick={() => alert("Virtual meeting coming soon!")}
+            />
           </div>
 
           <div className="text-center">
-            <a href="#services" className="inline-flex items-center bg-amber-600 text-white px-12 py-4 rounded-lg font-semibold text-lg hover:bg-amber-500 transition-shadow shadow-2xl">
+            <a
+              href="#services"
+              className="inline-flex items-center bg-amber-600 text-white px-12 py-4 rounded-lg font-semibold text-lg hover:bg-amber-500 transition-shadow shadow-2xl"
+            >
               Start Your Journey Today
               <ArrowRight className="ml-3 h-6 w-6" />
             </a>
@@ -484,26 +688,84 @@ export default function App() {
             <div>
               <h3 className="font-semibold text-lg mb-6">Quick Links</h3>
               <ul className="space-y-3 text-gray-400">
-                <li><a href="#home" className="hover:text-amber-400 transition-colors">Home</a></li>
-                <li><a href="#about" className="hover:text-amber-400 transition-colors">About Us</a></li>
-                <li><a href="#services" className="hover:text-amber-400 transition-colors">Services</a></li>
-                <li><a href="#contact" className="hover:text-amber-400 transition-colors">Contact</a></li>
-                <li><a href="#" className="hover:text-amber-400 transition-colors">Privacy Policy</a></li>
+                <li>
+                  <a
+                    href="#home"
+                    className="hover:text-amber-400 transition-colors"
+                  >
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#about"
+                    className="hover:text-amber-400 transition-colors"
+                  >
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#services"
+                    className="hover:text-amber-400 transition-colors"
+                  >
+                    Services
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    className="hover:text-amber-400 transition-colors"
+                  >
+                    Contact
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="hover:text-amber-400 transition-colors"
+                  >
+                    Privacy Policy
+                  </a>
+                </li>
               </ul>
             </div>
 
             <div>
               <h3 className="font-semibold text-lg mb-6">Get In Touch</h3>
               <div className="space-y-3 text-gray-400">
-                <div className="flex items-center"><Mail className="h-4 w-4 mr-3 text-amber-400" /> <a href="mailto:furimageconsult@gmail.com">furimageconsult@gmail.com</a></div>
-                <div className="flex items-center"><Mail className="h-4 w-4 mr-3 text-amber-400" /> <a href="mailto:info@furimage.com">info@furimage.com</a></div>
-                <div className="flex items-center"><Phone className="h-4 w-4 mr-3 text-amber-400" /> <a href="tel:+2348162056196">+234 (0) 81 6205 6196</a></div>
-                <div className="flex items-center"><MapPin className="h-4 w-4 mr-3 text-amber-400" /> <span>Mamman Vatsa Writer's Village, Mpape, Abuja.</span></div>
+                <div className="flex items-center">
+                  <Mail className="h-4 w-4 mr-3 text-amber-400" />{" "}
+                  <a href="mailto:furimageconsult@gmail.com">
+                    furimageconsult@gmail.com
+                  </a>
+                </div>
+                <div className="flex items-center">
+                  <Mail className="h-4 w-4 mr-3 text-amber-400" />{" "}
+                  <a href="mailto:info@furimage.com">info@furimage.com</a>
+                </div>
+                <div className="flex items-center">
+                  <Phone className="h-4 w-4 mr-3 text-amber-400" />{" "}
+                  <a href="tel:+2348162056196">+234 (0) 81 6205 6196</a>
+                </div>
+                <div className="flex items-center">
+                  <MapPin className="h-4 w-4 mr-3 text-amber-400" />{" "}
+                  <span>
+                    Off Ibrahim Aliyu Street, Phase II, Brick City Estate, Kubwa
+                    Expressway, Abuja.
+                  </span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">&copy;2024 {/**  - {new Date().getFullYear()}*/} Furimage Consult. All rights reserved. | Created By <a href="http://wa.me/+2349033572505" className="text-amber-400">Lazerwebs</a></div>
+          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
+            &copy;2024 {/**  - {new Date().getFullYear()}*/} Furimage Consult.
+            All rights reserved. | Created By{" "}
+            <a href="http://wa.me/+2349033572505" className="text-amber-400">
+              Lazerwebs
+            </a>
+          </div>
         </div>
       </footer>
     </div>
@@ -517,8 +779,8 @@ function ServiceCard({ service, index }) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) =>
-        (prevIndex + 1) % service.images.length
+      setCurrentImageIndex(
+        (prevIndex) => (prevIndex + 1) % service.images.length,
       );
     }, 4000);
 
@@ -552,14 +814,16 @@ function ServiceCard({ service, index }) {
           <div className="w-10 h-10 bg-blue-900 rounded-md flex items-center justify-center">
             <IconComp className="h-5 w-5 text-white" />
           </div>
-          <div className="text-sm font-semibold text-gray-900">{service.title}</div>
+          <div className="text-sm font-semibold text-gray-900">
+            {service.title}
+          </div>
         </div>
         <div className="absolute top-4 right-4 flex gap-1">
           {service.images.map((_, idx) => (
             <div
               key={idx}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                idx === currentImageIndex ? 'bg-white w-6' : 'bg-white/50'
+                idx === currentImageIndex ? "bg-white w-6" : "bg-white/50"
               }`}
             />
           ))}
@@ -581,7 +845,19 @@ function ServiceCard({ service, index }) {
   );
 }
 
-function ContactCard({ icon, title, subtitle, note, onClick }: { icon: React.ReactNode; title: React.ReactNode; subtitle: React.ReactNode; note?: React.ReactNode; onClick?: () => void }) {
+function ContactCard({
+  icon,
+  title,
+  subtitle,
+  note,
+  onClick,
+}: {
+  icon: React.ReactNode;
+  title: React.ReactNode;
+  subtitle: React.ReactNode;
+  note?: React.ReactNode;
+  onClick?: () => void;
+}) {
   return (
     <motion.div
       whileHover={{ y: -6 }}
